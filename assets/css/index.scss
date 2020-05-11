@@ -1,0 +1,23 @@
+form {
+  position: absolute;
+  input {
+    margin-left: 1vw;
+  }
+  .text {
+    font-size: 2em;
+    font-weight: bolder;
+  }
+  .radio {
+    margin-left: 30%;
+    margin-top: 4%;
+    font-size: 2em;
+    font-weight: bolder;
+    label {
+      padding-right: 10px;
+    }
+  }
+  .erg {
+    font-size: 2em;
+    font-weight: bolder;
+  }
+}
