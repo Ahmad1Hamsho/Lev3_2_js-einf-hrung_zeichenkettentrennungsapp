@@ -5,6 +5,10 @@ function work() {
   const cut = wort.length;
   if (document.getElementById("danach").checked) {
     wort1 = wort1 + cut;
+  } else if (satz.includes(wort) === false) {
+    document.getElementById("vorderer").innerHTML +=
+      "(" + " Das zeichen konnte leider nicht gefunden werden " + ") ";
+    document.getElementById("hinterer").innerHTML += satz;
   }
   document.getElementById("vorderer").innerHTML +=
     " " + satz.slice(0, wort1) + " ";
