@@ -1,18 +1,20 @@
 function work() {
   const satz = document.getElementById("satz").value;
   const wort = document.getElementById("wort").value;
-  var wort1 = satz.indexOf(wort);
-  const cut = wort.length;
-  if (document.getElementById("danach").checked) {
-    wort1 = wort1 + cut;
+  const befor = document.getElementById("vorderer");
+  const after = document.getElementById("hinterer");
+  const radio1 = document.getElementById("davor");
+  if (radio1.checked) {
+    var wort1 = satz.indexOf(wort);
+    befor.innerHTML += " " + satz.slice(0, wort1);
+    after.innerHTML += " " + satz.slice(wort1);
   } else if (satz.includes(wort) === false) {
     document.getElementById("vorderer").innerHTML +=
       "(" + " Das zeichen konnte leider nicht gefunden werden " + ") ";
     document.getElementById("hinterer").innerHTML += satz;
+  } else {
+    var wort1 = satz.search(wort);
+    befor.innerHTML += " " + satz.slice(0, wort1) + wort;
+    after.innerHTML += " " + satz.slice(wort1).split(wort).join(" ");
   }
-  document.getElementById("vorderer").innerHTML +=
-    " " + satz.slice(0, wort1) + " ";
-  document.getElementById("hinterer").innerHTML +=
-    " " + satz.slice(wort1) + " ";
-  console.log("working");
 }
